@@ -1257,12 +1257,12 @@
                     )
                 ) {
 
-                log::add('Abeille', 'info', 'Recherche objet: '.$value.' dans les objets connus');
                 $trimmedValue = $value;
+                log::add('Abeille', 'info', 'Recherche objet: '.$trimmedValue.' dans les objets connus');
 
                 /* Remove leading "lumi." from name as all xiaomi devices who start with this prefix. */
                 if (!strncasecmp($trimmedValue, "lumi.", 5))
-                    $trimmedValue = substr($trimmedValue, 5); // Remove leading "lumi." case insensitive    
+                    $trimmedValue = substr($trimmedValue, 5); // Remove leading "lumi." case insensitive
 
                 //remove all space in names for easier filename handling
                 $trimmedValue = str_replace(' ', '', $trimmedValue);
