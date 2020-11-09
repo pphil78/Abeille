@@ -1258,6 +1258,7 @@
                 ) {
 
                 log::add('Abeille', 'info', 'Recherche objet: '.$value.' dans les objets connus');
+                $trimmedValue = $value;
 
                 /* Remove leading "lumi." from name as all xiaomi devices who start with this prefix. */
                 if (!strncasecmp($value, "lumi.", 5))
