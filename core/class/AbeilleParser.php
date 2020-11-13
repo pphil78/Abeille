@@ -918,10 +918,14 @@
                     0x02, 0x03 The device was on the network and coming back.
                           Here we can assumed the device was not reset. */
 
+            // Si inter sur pile Legrand
+            // [2020-11-09 21:39:48][debug] Reçu: "004D 000D4B - 78DB 00047400007AD8F8 80 02 00"
+            // [2020-11-09 21:39:48][debug] Reçu: "004D 000CF5 - 78DB 00047400007AD8F8 80 BD"
+
             $Addr       = substr($payload, 0, 4);
-            $IEEE       = strtoupper(substr($payload, 4, 16));
+            $IEEE       = substr($payload, 4, 16);
             $MACCapa    = substr($payload, 20, 2);
-            if (strlen($payload) > 22)
+            if (strlen($payload) > 24)
                 $Rejoin = substr($payload, 22, 2);
             else
                 $Rejoin = "";
